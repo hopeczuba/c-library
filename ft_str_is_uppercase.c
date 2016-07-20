@@ -6,11 +6,11 @@
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 14:35:26 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/19 14:35:32 by hczuba           ###   ########.fr       */
+/*   Updated: 2016/07/20 14:41:19 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
 

@@ -6,11 +6,11 @@
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/15 15:32:16 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/19 22:09:24 by hczuba           ###   ########.fr       */
+/*   Updated: 2016/07/20 11:18:37 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c)
+int		ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
