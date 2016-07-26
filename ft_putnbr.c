@@ -6,18 +6,23 @@
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/14 21:31:53 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/19 21:50:24 by hczuba           ###   ########.fr       */
+/*   Updated: 2016/07/26 10:19:22 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_putchar(char c);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
-void ft_putnbr(int nb){
-	if(nb < 0)
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
 	{
 		ft_putchar('-');
+		nb *= -1;
 	}
-	if(nb / 10 != 0)
+	if (nb / 10 != 0)
 	{
 		ft_putnbr(nb / 10);
 	}
