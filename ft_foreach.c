@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/19 15:54:05 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/21 18:19:44 by hczuba           ###   ########.fr       */
+/*   Created: 2016/07/25 11:29:34 by hczuba            #+#    #+#             */
+/*   Updated: 2016/07/25 11:29:49 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int i;
-	int j;
 
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < nb)
+	while (i < length)
 	{
-		dest[i + j] = src[j];
-		j++;
+		f(tab[i]);
+		i++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
 }

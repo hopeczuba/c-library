@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/19 15:54:05 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/21 18:19:44 by hczuba           ###   ########.fr       */
+/*   Created: 2016/07/25 16:25:26 by hczuba            #+#    #+#             */
+/*   Updated: 2016/07/25 16:26:00 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+int		ft_any(char **tab, int (*f)(char*))
 {
 	int i;
-	int j;
 
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < nb)
+	while (tab[i] != 0)
 	{
-		dest[i + j] = src[j];
-		j++;
+		if (f(tab[i]) == 1)
+		{
+			return (1);
+		}
+		i++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+	return (0);
 }

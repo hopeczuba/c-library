@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/19 15:54:05 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/21 18:19:44 by hczuba           ###   ########.fr       */
+/*   Created: 2016/07/25 11:28:22 by hczuba            #+#    #+#             */
+/*   Updated: 2016/07/25 11:28:27 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+#include <stdlib.h>
+
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
 	int i;
-	int j;
+	int *mapped;
 
+	mapped = (int *)malloc(sizeof(*mapped) * length);
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < nb)
+	while (i < length)
 	{
-		dest[i + j] = src[j];
-		j++;
+		mapped[i] = f(tab[i]);
+		i++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+	return (mapped);
 }
