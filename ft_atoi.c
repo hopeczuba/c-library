@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hczuba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/18 18:33:24 by hczuba            #+#    #+#             */
-/*   Updated: 2016/07/19 23:25:45 by hczuba           ###   ########.fr       */
+/*   Created: 2016/07/31 16:54:42 by hczuba            #+#    #+#             */
+/*   Updated: 2016/07/31 20:39:03 by hczuba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,24 @@ int	ft_atoi(char *str)
 	int nb;
 	int i;
 	int sign;
-	int s;
 
 	nb = 0;
 	i = 0;
-	s = 0;
-	while (str[i] <= 32)
-		i++;
+	sign = 1;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		s = 1;
-		sign = (str[i] == '-') ? -1 : 1;
+		if (str[i++] == '-')
+			sign = -1;
 	}
-	while (str[i + s] != '\0')
+	while (str[i] != '\0')
 	{
-		if (!(str[i + s] <= 57 && str[i + s] >= 48))
-			return (0);
+		while (str[i] == ' ')
+			i++;
+		if (!(str[i] <= 57 && str[i] >= 48))
+			return (nb * sign);
 		if (i > 0)
 			nb *= 10;
-		nb += (str[i + s] - 48);
+		nb += (str[i] - 48);
 		i++;
 	}
 	return (nb * sign);
